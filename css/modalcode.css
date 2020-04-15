@@ -1,0 +1,290 @@
+@charset "UTF-8";
+
+/*!
+ * Started: 28th Mar, 2020 4:35pm
+ * Version - 1.0.11
+ *
+ * Copyright (c) 2020 Caleb Crosby Adainoo
+ */
+
+ /* .dark_theme, html, body{
+ 	background: #ededed;
+ 	color: #f3f3f3;
+ } */
+
+ .white_theme{
+ 	background: #ededed;
+ }
+
+body, html{
+	cursor: default;
+	/* width: 100%;
+	height: 100%; */
+	font-family: Nunito, sans-serif;
+	/* position: relative; */
+	/* min-height: 100%; */
+	counter-reset: section;
+}*{
+	box-sizing: border-box;
+    font-family: Nunito, sans-serif;
+}a{
+	text-decoration: none;
+	color: inherit;
+	height:100%;
+	width:100%;
+}
+
+input, textarea{
+	outline: none;
+}
+
+/*custom tootips*/
+[data-title] {
+	position: relative;
+	cursor: help;
+}
+
+[data-title]:hover::before {
+	content: attr(data-title);
+	position: absolute;
+	bottom: -36px;
+	z-index: 1000;
+	display: inline-block;
+	padding: 7px 10px;
+	border-radius: 5px;
+	background: #0477c8;
+	box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.7);
+	color: #fff;
+	font-size: 8px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	/*font-family: sans-serif;*/
+	white-space: nowrap;
+}
+[data-title]:hover::after {
+	content: '';
+	position: absolute;
+	z-index: 1000;
+	bottom: -10px;
+	left: 8px;
+	display: inline-block;
+	color: #fff;
+	border: 8px solid transparent;	
+	border-bottom: 8px solid #0cac16;
+}
+/*end of custom tool tips*/
+
+/*vertically center*/
+.parent-vert{
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.child-vert{
+	display: flex;
+	align-items: center;
+}
+/*end of vertically center*/
+
+/*center pagers*/
+.centroid_mega, .centroid, .centroid_900, .centroid_700, .centroid_600, .centroid_500{
+	max-width: 1200px;
+	margin: auto !important;
+}
+.centroid_mega{
+	max-width: 1400px;
+}
+
+.centroid_900{
+    max-width: 900px;   
+}.centroid_700{
+	max-width: 700px;
+}.centroid_600{
+	max-width: 600px;
+	position: relative;
+}.centroid_500{
+	max-width: 500px;
+	position: relative;
+}
+
+.linerA, .linerC{
+	width: 70px;
+	height: 3px;
+	border-radius: 3px;
+	background: #d7008a;
+	margin-bottom: 20px;
+}.linerB{
+	width: 120px;
+	height: 3px;
+	border-radius: 3px;
+	background: rgba(0, 0, 0, 0.1);
+	margin-bottom: 20px;
+	margin: auto;
+}.linerC{
+	margin: auto;
+}
+.margin_sm{
+	margin-bottom: 17px !important;
+}
+
+.trans{
+	transition: 0.3s all ease-in-out;
+	-webkit-transition: 0.3s all ease-in-out;
+}.transMenu{
+	transition: 0.2s all linear;
+	-webkit-transition: 0.2s all linear;
+}
+
+.fade_spade{
+	color: rgba(0, 0, 0, 0.3);
+}
+
+.relative_me{
+	position: relative;
+}
+
+/*grids*/
+.make_50, .make_50L{
+	width: 48% !important;
+	height: 67px;
+	float: right;
+}.make_50 select, .make_50L select{
+	width: 99%;
+}.make_50L{
+	float: left;
+}
+
+.keep_50{
+	width: 48% !important;
+}
+
+.hideME{
+	display: none;
+}
+
+.cp{cursor: pointer;}
+
+.grid-1 {width: 8.33%;}
+.grid-2 {width: 16.66%;}
+.grid-b3 {width: 20%;}
+.grid-3 {width: 25%;}
+.grid-4 {width: 33.33%;}
+.grid-5 {width: 41.66%;}
+.grid-b6 {width: 48%;}
+.grid-6, .float-6 {width: 50%;}
+.grid-7 {width: 58.33%;}
+.grid-8 {width: 66.66%;}
+.grid-9 {width: 75%;}
+.grid-10 {width: 83.33%;}
+.grid-11 {width: 91.66%;}
+.grid-12 {width: 100%;}
+
+[class*="grid-"] {
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.grid_container, .fl_ov{
+	overflow: auto;
+}
+
+.hide-overflowX{
+	overflow-x: hidden;
+}
+
+/*float clearer*/
+.front_clrfx{
+	clear: both;
+	float: none;
+}
+
+
+.float_left{
+	float: left;
+}.float_right{
+	float: right;
+}
+
+.fl{
+	float: left;
+}.fr{
+	float: right;
+}
+
+/*image preprocessor*/
+.imgfx{overflow: hidden;}
+.imgfx img{
+	max-width: 100%;
+	min-height: 100%;
+}
+
+.imgfxA{position: relative;}
+.imgfxA img{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.hidebx{
+    display: none !important;
+}
+.fadebx{
+	visibility: hidden;
+}
+
+.remove_margin{
+	margin: 0;
+}
+/*end of custom grids*/
+
+/*spacers*/
+.spacerAS{
+	height: 20px;
+}.spacerA{
+	height: 40px;
+}.spacerB{
+	height: 60px;
+}
+/*end of spacers*/
+
+/*liners*/
+.frosted_liner{
+	width: 93%;
+	height: 1px;
+	margin: auto;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	background: rgba(255, 255, 255, 0.67);
+}
+
+/*end of liners*/
+
+
+/*borders*/
+.bb{
+	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+/*end of borders*/
+
+
+.app_text{
+	color: #14db0d;
+}.app_theme{
+	background: #14db0d;
+}
+
+.app_copy_bot{
+	font-family: Montserrat, sans-serif;
+	font-size: 0.7em;
+	color: rgba(0, 0, 0, 0.7);
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	background: #fff;
+	padding: 5px 12px;
+	box-sizing: border-box;
+	border-radius: 7px 0 0 0;
+	letter-spacing: 0.5px;
+}

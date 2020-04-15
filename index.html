@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- prevent caching -->
+	<meta http-equiv="expires" content="Sun, 01 Jan 2014 00:00:00 GMT"/>
+	<meta http-equiv="pragma" content="no-cache" />
+    <!-- color (chrome) tab -->
+    <meta name="theme-color" content="#1f49a6">
+	<meta name="msapplication-navbutton-color" content="#1f49a6">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#1f49a6">
+    <title>Demo Rapidnosis &bull; Limitless AI</title>
+    <link rel="shortcut icon" href="ico/lungs.png" type="image/x-png">
+    <!-- load css -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/modalcode.css">
+    <link rel="stylesheet" href="css/magic.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- font load -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Montserrat:400,600,700|Tangerine|Noto+Sans:400,700|Open+Sans:400,600,700&display=swap" rel="stylesheet">
+     <!-- js dependencies -->
+     <script src="js/jquery.js"></script>
+     <script defer src="js/demo.js"></script>
+</head>
+<body>
+    <!-- nav bar -->
+    <div class="spacerA"></div>
+    <!-- end of nav bar -->
+
+    <!-- demo screen -->
+    <section class="demo_container">
+        <!-- splash screen -->
+        <div class="splash_screen set_sc magictime ">
+            <!-- header -->
+            <header class="splash_hdr">
+                <!-- splash logo -->
+                <div class="splash_logo">
+                    <img src="img/app_logo_whp.png" alt="">
+                </div>
+                <!-- splash text -->
+                <div class="splash_text">
+                    Rapid detection of COVID-19
+                    infections in X-Ray images
+                </div>
+            </header>
+            <!-- footer -->
+            <footer class="splash_foot magictime slideDownReturn">
+                <div id="splashStart" class="trans">Loading <span></span></div>
+                <div class="splash_copy">
+                    Limitless AI &copy <span class="project_yr"></span>
+                </div>
+            </footer>
+        </div>
+        <!-- end of splash screen -->
+
+        <!-- login screen -->
+        <div class="login_screen set_sc magictime hidebx">
+            <!-- login ext -->
+            <header class="login_hdrtxt">
+                <div class="login_logo"><img src="img/app_logo_blc.png" alt=""></div>
+                <h1 class="app_h1">Welcome, Login</h1>
+                <div class="login_hdr_info">Enter your credentials to continue</div>
+            </header>
+            <!-- mid section form -->
+            <section class="login_form">
+                <form action="" method="post">
+                    <!-- user id -->
+                    <div class="form_field">
+                        <input type="text" name="userid" class="txt_input form_user trans" placeholder="User ID...">
+                    </div>
+                    <!-- pass key -->
+                    <div class="form_field">
+                        <input type="password" name="passkey" class="txt_input form_pass trans" placeholder="Pass Key...">
+                        <div class="viewpasskey"></div>
+                    </div>
+                    <!-- button -->
+                    <input type="submit" class="form_submit" value="Login">
+                </form>
+            </section>
+            <!-- login footer -->
+            <footer class="login_footer">
+                <!-- foot notes -->
+                <div class="login_foot_notes">
+                    Request User ID and Pass Key <a href="#" target="_blank">Here</a>
+                </div>
+                <!-- disclaimer -->
+                <div class="login_disclaimer">
+                    Rapidnosis is meant to be a secondary test tool to help detect and confirm 
+                    COVID-19 cases. Hence it is not to be used as first hand test tool.
+                </div>
+            </footer>
+            <!-- about -->
+            <div class="login_about">
+                <div class="btn_about"></div>
+            </div>
+        </div>
+        <!-- end of login screen -->
+
+        <!-- home screen -->
+        <aside class="home_screen set_sc magictime hidebx">
+            <form action="" method="post" id="testForm" enctype="multipart/form-data">
+                <div class="msg-space"></div>
+                <!-- header section -->
+                <header class="home_hdr">
+                    <!-- double tab -->
+                    <!-- <div class="home_double_tab">
+                        <div class="home_tab trans home_test_tab home_tab_active">Test</div>
+                        <div class="home_tab trans home_record_tab">Records</div>
+                    </div> -->
+                    <!-- <div class="spacerA"></div> -->
+                    <aside class="home_none_tabbx">
+                        <!-- test text -->
+                        <div class="home_text_txt">Test for COVID-19 in X-Ray Images</div>
+                        <!-- test image upload box -->
+                        <div class="home_img_upbx">
+                            <figure class="xray_img">
+                                <div class="xray_imgpad">
+                                    <img id="xray_id" src="#" alt=" ">
+                                </div>
+                                <label class="home_lblupload">
+                                    <input type="file" name="imgupload" class="hidebx">
+                                </label>
+                            </figure>
+                            <div class="home_hdrinstruct">Upload digital X-Ray Image</div>
+                        </div>
+                    </aside>
+                </header>
+                <!-- home body 1 -->
+                <section class="home_body1">
+                    <h3 class="app_h3 pad10">
+                        WHO Guide Line Symptom Evaluation 
+                    </h3>
+                    <aside class="mHeight">
+                        <div class="parent">
+                            <div class="scrollbar"></div>
+                            <div class="scrollable testQxnsList">
+                                <!-- guide qxn -->
+                                <div class="listItembx">
+                                    <div class="listText isNumbered">
+                                        Do you have a dry cough?
+                                    </div>
+                                    <div class="listbtnbx">
+                                        <!-- yes -->
+                                        <label class="lblListCheckbx lblYes">
+                                            <input type="radio" name="qxn1" class="" value="1">
+                                            <span>Yes</span>
+                                        </label>
+                                        <!-- no -->
+                                        <label class="lblListCheckbx lblNo">
+                                            <input type="radio" name="qxn1" class="" value="0">
+                                            <span> No</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- guide qxn -->
+                                <div class="listItembx">
+                                    <div class="listText isNumbered">
+                                        Is the dry cough a new cough?
+                                    </div>
+                                    <div class="listbtnbx">
+                                        <!-- yes -->
+                                        <label class="lblListCheckbx lblYes">
+                                            <input type="radio" name="qxn2" class="" value="1">
+                                            <span>Yes</span>
+                                        </label>
+                                        <!-- no -->
+                                        <label class="lblListCheckbx lblNo">
+                                            <input type="radio" name="qxn2" class="" value="0">
+                                            <span> No</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- guide qxn -->
+                                <div class="listItembx">
+                                    <div class="listText isNumbered">
+                                        Do you have a high temperature with fever symptoms?
+                                    </div>
+                                    <div class="listbtnbx">
+                                        <!-- yes -->
+                                        <label class="lblListCheckbx lblYes">
+                                            <input type="radio" name="qxn3" class="" value="1">
+                                            <span>Yes</span>
+                                        </label>
+                                        <!-- no -->
+                                        <label class="lblListCheckbx lblNo">
+                                            <input type="radio" name="qxn3" class="" value="0">
+                                            <span> No</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- guide qxn -->
+                                <div class="listItembx">
+                                    <div class="listText isNumbered">
+                                        Do you have difficulty breathing?
+                                    </div>
+                                    <div class="listbtnbx">
+                                        <!-- yes -->
+                                        <label class="lblListCheckbx lblYes">
+                                            <input type="radio" name="qxn4" class="" value="1">
+                                            <span>Yes</span>
+                                        </label>
+                                        <!-- no -->
+                                        <label class="lblListCheckbx lblNo">
+                                            <input type="radio" name="qxn4" class="" value="0">
+                                            <span> No</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- guide qxn -->
+                                <div class="listItembx">
+                                    <div class="listText isNumbered">
+                                        Do you find it difficult to hold your breath for more than 10 seconds?
+                                    </div>
+                                    <div class="listbtnbx">
+                                        <!-- yes -->
+                                        <label class="lblListCheckbx lblYes">
+                                            <input type="radio" name="qxn5" class="" value="1">
+                                            <span>Yes</span>
+                                        </label>
+                                        <!-- no -->
+                                        <label class="lblListCheckbx lblNo">
+                                            <input type="radio" name="qxn5" class="" value="0">
+                                            <span> No</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- guide qxn -->
+                                <div class="listItembx">
+                                    <div class="listText isNumbered">
+                                        Do you have a general feeling of body weakness?
+                                    </div>
+                                    <div class="listbtnbx">
+                                        <!-- yes -->
+                                        <label class="lblListCheckbx lblYes">
+                                            <input type="radio" name="qxn6" class="" value="1">
+                                            <span>Yes</span>
+                                        </label>
+                                        <!-- no -->
+                                        <label class="lblListCheckbx lblNo">
+                                            <input type="radio" name="qxn6" class="" value="0">
+                                            <span> No</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- guide qxn -->
+                                <div class="listItembx">
+                                    <div class="listText isNumbered">
+                                        Have you travelled in the past three months?
+                                    </div>
+                                    <div class="listbtnbx">
+                                        <!-- yes -->
+                                        <label class="lblListCheckbx lblYes">
+                                            <input type="radio" name="qxn7" class="" value="1">
+                                            <span>Yes</span>
+                                        </label>
+                                        <!-- no -->
+                                        <label class="lblListCheckbx lblNo">
+                                            <input type="radio" name="qxn7" class="" value="0">
+                                            <span> No</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- guide qxn -->
+                                <div class="listItembx">
+                                    <div class="listText isNumbered">
+                                        Have you come into contact with any person(s) with recent travel history?
+                                    </div>
+                                    <div class="listbtnbx">
+                                        <!-- yes -->
+                                        <label class="lblListCheckbx lblYes">
+                                            <input type="radio" name="qxn8" class="" value="1">
+                                            <span>Yes</span>
+                                        </label>
+                                        <!-- no -->
+                                        <label class="lblListCheckbx lblNo">
+                                            <input type="radio" name="qxn8" class="" value="0">
+                                            <span> No</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- guide qxn -->
+                                <div class="listItembx">
+                                    <div class="listText isNumbered">
+                                        Are you a health worker?
+                                    </div>
+                                    <div class="listbtnbx">
+                                        <!-- yes -->
+                                        <label class="lblListCheckbx lblYes">
+                                            <input type="radio" name="qxn9" class="" value="1">
+                                            <span>Yes</span>
+                                        </label>
+                                        <!-- no -->
+                                        <label class="lblListCheckbx lblNo">
+                                            <input type="radio" name="qxn9" class="" value="0">
+                                            <span> No</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- guide qxn -->
+                                <div class="listItembx">
+                                    <div class="listText isNumbered">
+                                        Have you come into contact with any individual who is a health worker?
+                                    </div>
+                                    <div class="listbtnbx">
+                                        <!-- yes -->
+                                        <label class="lblListCheckbx lblYes">
+                                            <input type="radio" name="qxn10" class="" value="1">
+                                            <span>Yes</span>
+                                        </label>
+                                        <!-- no -->
+                                        <label class="lblListCheckbx lblNo">
+                                            <input type="radio" name="qxn10" class="" value="0">
+                                            <span> No</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- submit btn -->
+                                <input type="submit" value="Evaluate" class="btnOk">
+                                <div class="spacerB"></div>
+                            </div>
+                            <!-- end of scrollable -->
+                        </div>
+                    </aside>
+                </section>
+            </form>
+        </aside>
+        <!-- end of home screen -->
+
+        <!-- test results -->
+        <aside class="test_results_screen set_sc magictime hidebx">
+            <!-- header -->
+            <header class="testr_hdr">
+                <div class="back"></div>
+                <h1 class="app-h1">Test Results</h1>
+                <div class="testr_bx">
+                    <div class="testr_value ">Negative</div>
+                    <div class="testr_txt">
+                        For presence of COVID-19 in X-Ray Image
+                    </div>
+                </div>
+            </header>
+            <!-- section -->
+            <section class="testr_section">
+                <div class="testr_valsect">Symptom NOT COVID-19</div>
+                <div class="testr_txtsect">
+                    Patient's evaluated symptoms are not consistent with COVID-19 symptoms
+                </div>
+                <div class="spacerA"></div>
+                <div class="spacerA"></div>
+                <div class="testr_done back_home">Done</div>
+                <div class="spacerA"></div>
+                <div class="testr_disclaimer">
+                    <sup>*</sup> Tests are saved anonymously under records
+                </div>
+            </section>
+        </aside>
+        <!-- end of test results -->
+
+        <!-- records screen -->
+        <aside class="records_screen set_sc magictime hidebx">
+            <!-- header -->
+            <header class="records_hdr testr_hdr">
+                <div class="back"></div>
+                <h1 class="app-h1">Anonymous Test Records</h1>
+            </header>
+            <!-- section -->
+            <section class="record_listbx">
+                <!-- <article class="record_listview"> -->
+                    <div class="parent">
+                        <div class="scrollbar"></div>
+                        <div class="scrollable testQxnsList">
+                            <!-- record entity -->
+                            <div class="listItembx listview_holder">
+                                <!-- top row -->
+                                <div class="listview_rowA">
+                                    <div class="listview_elA">14th Apr. 2020, 13:53 GMT</div>
+                                    <div class="listview_elA">X-Ray Result <span>-tive</span></div>
+                                </div>
+                                <!-- bottom row -->
+                                <div class="listview_rowB">
+                                    <div class="listview_elB">Loc: Accra, Ghana</div>
+                                    <div class="listview_elB">Sympt. Eva.: NOT COVID-19</div>
+                                </div>
+                            </div>
+                            <!-- record entity -->
+                            <div class="listItembx listview_holder">
+                                <!-- top row -->
+                                <div class="listview_rowA">
+                                    <div class="listview_elA">13th Apr. 2020, 10:14 GMT</div>
+                                    <div class="listview_elA">X-Ray Result <span>-tive</span></div>
+                                </div>
+                                <!-- bottom row -->
+                                <div class="listview_rowB">
+                                    <div class="listview_elB">Loc: Accra, Ghana</div>
+                                    <div class="listview_elB">Sympt. Eva.: NOT COVID-19</div>
+                                </div>
+                            </div>
+                            <!-- record entity -->
+                            <div class="listItembx listview_holder">
+                                <!-- top row -->
+                                <div class="listview_rowA">
+                                    <div class="listview_elA">11th Apr. 2020, 08:24 GMT</div>
+                                    <div class="listview_elA">X-Ray Result <span class="span-pos">+tive</span></div>
+                                </div>
+                                <!-- bottom row -->
+                                <div class="listview_rowB">
+                                    <div class="listview_elB">Loc: Accra, Ghana</div>
+                                    <div class="listview_elB">Sympt. Eva.: Yes COVID-19</div>
+                                </div>
+                            </div>
+                            <div class="spacerA"></div>
+                            <a href="http://demo.limitlessai.org/dashboard" target="_blank">
+                                <div class="testr_done">View Dashboard</div>
+                            </a>
+                        </div>
+                    </div>
+                <!-- </article> -->
+            </section>
+        </aside>
+        <!-- end of records screen -->
+
+        <footer class="app_navbar hidebx">
+            <div class="app_nav_ico trans nav_active">
+                <img src="ico/stethoscope.png" alt="">
+                <span>Test</span>
+            </div>
+            <div class="app_nav_ico trans">
+                <img src="ico/lab.png" alt="">
+                <span>Last Report</span>
+            </div>
+            <div class="app_nav_ico trans">
+                <img src="ico/report.png" alt="">
+                <span>Test Reports</span>
+            </div>
+        </footer>
+    </section>
+    <!-- end of demo screen -->
+
+
+    <!-- footer -->
+    <footer class="demo_footer">
+        
+    </footer>
+    <!-- end of footer -->
+</body>
+</html>
